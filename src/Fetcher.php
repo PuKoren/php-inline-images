@@ -29,13 +29,13 @@ class Fetcher {
      * @return void
      */
     private function fetchRemote() {
-        $ch = curl_init($this->path);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $curl = curl_init($this->path);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-        $this->data = curl_exec($ch);
-        $this->mime = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
+        $this->data = curl_exec($curl);
+        $this->mime = curl_getinfo($curl, CURLINFO_CONTENT_TYPE);
 
-        curl_close($ch);
+        curl_close($curl);
     }
 
     /**

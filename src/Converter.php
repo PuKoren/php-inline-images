@@ -36,9 +36,9 @@ class Converter {
             }
 
             return 'data:'.$mime.';utf-8,'.implode('', $output);
-        } else {
-            return 'data:'.$mime.';base64,'.base64_encode($fetcher->getFileData());
         }
+
+        return 'data:'.$mime.';base64,'.base64_encode($fetcher->getFileData());
     }
 
     /**

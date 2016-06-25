@@ -1,7 +1,6 @@
 <?php
-use phpunit\framework\TestCase;
 
-class ConverterTest extends TestCase {
+class ConverterTest extends PHPUnit_Framework_TestCase {
 
   /**
   * @expectedException PHPUnit_Framework_Error
@@ -66,8 +65,11 @@ class ConverterTest extends TestCase {
     $this->assertEquals($svg, $converter->convert());
   }
 
+  /**
+  * @expectedException Exception
+  * @expectedExceptionMessage  Invalid Path/URL provided
+  */
   public function testInliningNonExistantFile() {
-    $this->expectException(\Exception::class);
     $converter = new InlineImages\Converter('tests/img');
     $converter->convert();
   }

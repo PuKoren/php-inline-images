@@ -1,4 +1,10 @@
 # inline-images
+[![Latest Stable Version](https://poser.pugx.org/koren/inline-images/v/stable)](https://packagist.org/packages/koren/inline-images)
+[![Build Status](https://travis-ci.org/PuKoren/php-inline-images.svg?branch=master)](https://travis-ci.org/PuKoren/php-inline-images)
+[![codecov](https://codecov.io/gh/PuKoren/php-inline-images/branch/master/graph/badge.svg)](https://codecov.io/gh/PuKoren/php-inline-images)
+[![Code Climate](https://codeclimate.com/github/PuKoren/php-inline-images/badges/gpa.svg)](https://codeclimate.com/github/PuKoren/php-inline-images)
+[![Total Downloads](https://poser.pugx.org/koren/inline-images/downloads)](https://packagist.org/packages/koren/inline-images)
+
 A PHP lib to handle image inlining in your (css, img src, etc.)
 
 # Install

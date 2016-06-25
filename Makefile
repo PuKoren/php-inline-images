@@ -5,4 +5,4 @@ tests:
 	make lint
 	make cover
 cover:
-	phpunit --coverage-clover coverage/lcov.info --coverage-html coverage/html
+	phpunit --coverage-clover coverage.xml --coverage-html coverage/html
