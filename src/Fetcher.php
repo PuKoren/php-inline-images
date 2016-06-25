@@ -6,6 +6,10 @@ class Fetcher {
     private $data = NULL;
     private $mime = NULL;
 
+    /**
+     * Take a remote path for a file to be fetched
+     * @param string $path a file path
+     */
     function __construct($path) {
         $this->path = $path;
 
@@ -20,6 +24,10 @@ class Fetcher {
         }
     }
 
+    /**
+     * Fetches a remote file and grab its mime/content using curl
+     * @return void
+     */
     private function fetchRemote() {
         $ch = curl_init($this->path);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -30,6 +38,10 @@ class Fetcher {
         curl_close($ch);
     }
 
+    /**
+     * Fetch a local file and grab its mime type and file content
+     * @return void
+     */
     private function fetchLocal() {
         $finfo = finfo_open(FILEINFO_MIME_TYPE);
         $this->mime = finfo_file($finfo, $this->path);
@@ -37,10 +49,18 @@ class Fetcher {
         $this->data = file_get_contents($this->path, FILE_USE_INCLUDE_PATH);
     }
 
+    /**
+     * Return the current file mime type
+     * @return string the file mime type
+     */
     function getMimeType() {
         return $this->mime;
     }
 
+    /**
+     * Return the current file content
+     * @return string the file content
+     */
     function getFileData() {
         return $this->data;
     }
